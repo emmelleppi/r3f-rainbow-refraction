@@ -1,25 +1,23 @@
-import React, { Suspense } from "react";
-import { Canvas } from "react-three-fiber";
-import { OrbitControls } from "drei";
-import Effects from "./Effects";
-import Scene from "./Scene";
+import React from 'react'
+import { Canvas } from 'react-three-fiber'
+import { PerspectiveCamera } from 'drei'
 
-function App() {
+import Scene from './Scene'
+
+export default function App() {
   return (
     <Canvas
-      shadowMap
-      colorManagement
-      camera={{ position: [0, 0, -4], far: 50 }}
-      style={{
-        background: "#121212",
-      }}
       concurrent
-    >
+      colorManagement
+      gl={{
+        powerPreference: 'high-performance',
+        antialias: false,
+        stencil: false,
+        depth: false
+      }}>
+      <PerspectiveCamera makeDefault position={[0, 0, 40]} near={0.1} far={100}  />
+      <ambientLight intensity={0.5} />
       <Scene />
-      <Effects />
-      <OrbitControls />
     </Canvas>
-  );
+  )
 }
-
-export default App;
