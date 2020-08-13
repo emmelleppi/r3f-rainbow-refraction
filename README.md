@@ -1,6 +1,6 @@
-# Preview https://r3f-tv-postprocessing.netlify.app 📺
+# 🌈🌈🌈
 
-react-three-fiber demo aimed at applying postprocessing to a render target
+react-three-fiber
 
 ![](https://raw.githubusercontent.com/emmelleppi/r3f-rainbow-donuts/master/Screenshot.jpg)
 
