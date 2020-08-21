@@ -8,7 +8,7 @@ varying vec3 viewDirection;
 varying vec2 vUv;
 
 float ior = 1.5;
-float a = 0.1;
+float a = 0.33;
 
 vec3 fogColor = vec3(1.0);
 vec3 reflectionColor = vec3(1.0);

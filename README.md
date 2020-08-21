@@ -1,16 +1,17 @@
-# Preview https://r3f-rainbow-donuts.netlify.app 🌈🌈🌈
+# Preview https://r3f-rainbow-refraction.netlify.app 🌈🌈🌈
 
-react-three-fiber
+Made with react-three-fiber and use-cannon
 
-![](https://raw.githubusercontent.com/emmelleppi/r3f-rainbow-donuts/master/Screenshot.jpg)
+![](https://raw.githubusercontent.com/emmelleppi/r3f-rainbow-donuts/master/screenshot.jpg)
 
 To run locally:
+
 ```bash
 # using npm
-npm install 
+npm install
 npm run start
 
 # using yarn
-yarn 
+yarn
 yarn start
 ```

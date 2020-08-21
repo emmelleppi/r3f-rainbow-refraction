@@ -20,7 +20,7 @@ Then, we use `react-three-fiber`'s extend to add this new material to the availa
 extend({ DeformMaterial });
 
 // in our components, anywhere in the app
-<shaderMaterial time={.1} magnitude={5.} />
+<shaderMaterial time={0.1} magnitude={5} />;
 ```
 
-The shader code is in the `fragment.glsl` and `vertex.glsl` files. 
+The shader code is in the `fragment.glsl` and `vertex.glsl` files.

@@ -17,3 +17,4 @@ void main() {
     viewDirection = normalize(worldPosition.xyz - cameraPosition);;
     gl_Position = projectionMatrix * modelViewMatrix * transformedPosition;
 }
+
