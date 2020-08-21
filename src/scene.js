@@ -7,7 +7,7 @@ import {
   useLoader,
   useResource,
 } from "react-three-fiber";
-import { PerspectiveCamera } from "drei";
+import { Html, PerspectiveCamera } from "drei";
 import { Physics } from "use-cannon";
 import {
   EffectComposer,
@@ -194,32 +194,32 @@ function Scene() {
         far={100}
         layers={2}
       />
-      <Physics
-        gravity={[0, -100, 0]}
-        defaultContactMaterial={{ restitution: 0.1 }}
-      >
-        {SPHERES.map((ref, index) => (
-          <Marble
-            key={`0${index}`}
-            ref={ref}
-            prev={SPHERES[(index - 1) % SPHERES_NUM]}
-            next={SPHERES[(index + 1) % SPHERES_NUM]}
-            map={savePassTarget.renderTarget.texture}
-            envMap={savePassEnv.renderTarget.texture}
-            backfaceMap={savePassBackface.renderTarget.texture}
-          />
-        ))}
-        <Room />
-        <Mouse />
-      </Physics>
+      {SPHERES.map((ref, index) => (
+        <Marble
+          key={`0${index}`}
+          ref={ref}
+          prev={SPHERES[(index - 1) % SPHERES_NUM]}
+          next={SPHERES[(index + 1) % SPHERES_NUM]}
+          map={savePassTarget.renderTarget.texture}
+          envMap={savePassEnv.renderTarget.texture}
+          backfaceMap={savePassBackface.renderTarget.texture}
+        />
+      ))}
+      <Room />
+      <Mouse />
     </>
   );
 }
 
 export default function _Scene() {
   return (
-    <Suspense fallback={null}>
-      <Scene />
-    </Suspense>
+    <Physics
+      gravity={[0, -100, 0]}
+      defaultContactMaterial={{ restitution: 0.1 }}
+    >
+      <Suspense fallback={<Html>...loading</Html>}>
+        <Scene />
+      </Suspense>
+    </Physics>
   );
 }
